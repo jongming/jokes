@@ -1,10 +1,20 @@
 import Joke from "./components/joke"
 import './App.css';
+import jokesData from "./components/jokesData"
 
-function App() {
+export default function App() {
+  const jokElements = jokesData.map(joke => {
+    return <Joke setup={joke.setup} punchline={joke.punchline} />
+  })
   return (
     <div className="App">
-      <Joke 
+      {jokElements}
+
+
+
+
+
+      {/* <Joke 
         setup="I got my daughter a fridge for her birthday."
         punchline="I can't wait to see her face light up when she opens it."
       />
@@ -32,10 +42,8 @@ function App() {
         <Joke 
           punchline="It’s hard to explain puns to kleptomaniacs because 
           they always take things literally."
-        />
+        /> */}
     </div>
 
   );
 }
-
-export default App;
